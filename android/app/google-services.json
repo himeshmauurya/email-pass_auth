@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "643804734568",
+    "project_id": "mailauth-7fe9a",
+    "storage_bucket": "mailauth-7fe9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643804734568:android:5c7c8ff30920f9131487dd",
+        "android_client_info": {
+          "package_name": "com.mailauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBjrVpRyIK0v-Yv4jU0hCwFKzYkCx9nI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
