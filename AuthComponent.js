@@ -10,10 +10,13 @@ const AuthComponent = () => {
  
   const handleSignUp = async () => {
     try {
-        auth().createUserWithEmailAndPassword(email, password).then((user)=>{
+        auth().createUserWithEmailAndPassword(email.trim(), password).then((user)=>{
             console.log(auth().currentUser)
+            console.log('User signed up successfully!');
+        }).catch((err)=>{
+            console.log(err)
         });
-        console.log('User signed up successfully!');
+        
       } catch (error) {
         console.error('Error signing up:', error)
       }
@@ -21,14 +24,26 @@ const AuthComponent = () => {
   };
 
   const handleSignIn = async () => {
-    try {
-        auth().signInWithEmailAndPassword(email, password).then((user)=>{
-            console.log(user)
-        });
-        console.log('User signed in successfully!');
-      } catch (error) {
-        console.error('Error signing in:', error);
-      }
+    console.log("auth().currentUser",auth().currentUser)
+    if(auth().currentUser==null){
+        
+        try {
+            auth().signInWithEmailAndPassword(email.trim(), password).then((user)=>{
+                console.log(user)  
+                if(user){
+                    console.log('User signed in successfully!');
+                }
+            }).catch(err=>{
+                console.log("jkjk",err)
+            })
+            
+          } catch (error) {
+            console.error('Error signing in:', error);
+          }
+    }else{
+        console.log("user already found")
+    }
+    
    
   };
 
